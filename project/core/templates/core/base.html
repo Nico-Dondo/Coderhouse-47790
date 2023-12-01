@@ -13,6 +13,11 @@
     <link rel="icon" type="image/x-icon" href="{% static 'core/assets/favicon.ico' %}" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{% static 'core/css/styles.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-gpGfzbzzVCEhY5KgPZNDEzfcSU2XOdFNTBb6Ukd5HxCt6l5fZgAfgI5Gz7LH6FA" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -34,22 +39,25 @@
                 <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it,
                     but it makes a great use of the standard Bootstrap core components. Feel free to use this template
                     for any project you want!</p>
-                <a class="btn btn-primary" href="#!">Call to Action!</a>
+                
             </div>
         </div>
         <!-- Call to Action-->
-        <div class="card text-white bg-secondary my-5 py-4 text-center">
+        <div class="card mb-4">
+            <div class="card-header">Busqueda</div>
             <div class="card-body">
-                <p class="text-white m-0">This call to action card is a great place to showcase some important
-                    information or display a clever tagline!</p>
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Ingrese su busqueda" aria-label="Enter search term..." aria-describedby="button-search">
+                    <button class="btn btn-primary" id="button-search" type="button">Vamos</button>
+                </div>
             </div>
         </div>
         <!-- Content Row-->
         <div class="row gx-4 gx-lg-5">
-            {% include 'core/card.html' with titulo="Tarjeta 1" %}
-            {% include 'core/card.html' with titulo="Tarjeta 2" %}
-            {% include 'core/card.html' with titulo="Tarjeta 3" %}
+            {% block tarjetas %}
+            {% endblock tarjetas %}
         </div>
+       
         <!-- Footer-->
         {% include 'core/footer.html' %}
         <!-- Bootstrap core JS-->
